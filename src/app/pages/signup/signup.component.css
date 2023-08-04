@@ -1,0 +1,10 @@
+.full-width{
+    width: 100%;
+}
+.button-margin{
+    margin-left: 20px;
+}
+.text-danger{
+    margin-bottom: 10px;
+    color: rgb(228, 24, 24);
+}

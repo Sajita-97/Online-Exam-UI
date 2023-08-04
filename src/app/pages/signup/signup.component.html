@@ -1,0 +1,102 @@
+
+<div class="bootstrap-wrapper">
+    <div class="container">
+  
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <mat-card>
+          <div class="container text-center">
+            <img src="../assets/register.png" class="images">
+  
+          </div>
+          <h1 class="text-center">Register Here !!</h1>
+          <!--{{student | json}}-->
+          <form  action="" (ngSubmit)="formSubmit()">
+            <!--username-->
+            <mat-form-field  class="full-width" appearance="outline">
+              <mat-label>User Name</mat-label>
+              <input name="username" required minlength="4" [(ngModel)]="student.username" #name="ngModel"
+              matInput placeholder="Enter Here"/>
+             </mat-form-field>
+
+            
+          
+           <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
+           
+
+                  <span *ngIf="name.errors?.['required']"> Name is required.</span>
+               
+               
+                 <span *ngIf="name.errors?.['minlength']"> Name must be at least 4 characters long. </span>
+   
+             </div>
+            <!--password-->
+            <mat-form-field  class="full-width" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input type="password" name="password" required minlength="4" [(ngModel)]="student.password"  #name="ngModel"
+              matInput placeholder="Enter Here"/>
+            
+            </mat-form-field>
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
+           
+
+              <span *ngIf="name.errors?.['required']"> Password is required.</span>
+           
+           
+             <span *ngIf="name.errors?.['minlength']"> password should 4 to 10 characters at least one Uppercase. </span>
+            </div>
+            <!--firstname-->
+            <mat-form-field  class="full-width" appearance="outline">
+              <mat-label>First Name</mat-label>
+              <input name="firstName" required [(ngModel)]="student.firstName" #name="ngModel"
+              matInput placeholder="Enter Here"/>
+            
+            </mat-form-field>
+            <!--lastname-->
+            <mat-form-field  class="full-width" appearance="outline">
+              <mat-label>Last Name</mat-label>
+              <input name="lastName" required [(ngModel)]="student.lastName" #name="ngModel"
+              matInput placeholder="Enter Here"/>
+            
+            </mat-form-field>
+            <!--email-->
+            <mat-form-field  class="full-width" appearance="outline">
+              <mat-label>Email</mat-label>
+              <input required  name="email" [(ngModel)]="student.email" #name="ngModel"
+              matInput placeholder="Enter Here"/>
+            
+            </mat-form-field>
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
+           
+
+              <span *ngIf="name.errors?.['required']"> Email is required.</span>
+              </div>
+            <!--phone-->
+            <mat-form-field  class="full-width" appearance="outline">
+              <mat-label>Phone</mat-label>
+              <input required pattern="+91\d{10}" name="phone" [(ngModel)]="student.phone" #name="ngModel"
+              type="number" matInput placeholder="Enter Here"/>
+            
+            </mat-form-field>
+            <!--address-->
+            <mat-form-field class="full-width"  appearance="outline">
+              <mat-label>Address</mat-label>
+              <textarea [(ngModel)]="student.address" name="address"
+              matInput></textarea>
+            </mat-form-field>
+  
+            <div class="container text-center">
+              <button type="submit" mat-raised-button color="primary">Submit</button>
+              <button mat-raised-button color="accent" class="button-margin">Reset</button>
+            </div>
+  
+          </form>
+        </mat-card>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  
+  
+  
