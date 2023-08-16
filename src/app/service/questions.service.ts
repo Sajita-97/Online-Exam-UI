@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import baseUrl from './helper';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class QuestionsService {
   public getQuestionsOfQuiz(qid:any){
    return this.http.get(`${baseUrl}/question/quiz/all/${qid}`);
   }
-  public getQuestionsOfQuizForTest(qid:any){
+  public getQuestionsOfQuizForTest(qid:any):Observable<any>{
     return this.http.get(`${baseUrl}/question/quiz/${qid}`);
    }
   // post all question

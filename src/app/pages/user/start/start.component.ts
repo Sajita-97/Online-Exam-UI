@@ -2,7 +2,11 @@ import { LocationStrategy } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { QuestionsService } from '../../../service/questions.service';
+
+
+
 import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-start',
@@ -32,12 +36,24 @@ export class StartComponent implements OnInit {
       next:(data:any)=>{
        this.questions =data;
        this.timer = this.questions.length *2 *60;
+      //  this.questions.pipe(map((val: any) =>{
+      //   return val.content.replace('<p>', '').replace('</p>', '');
+      //  } )  
+
+      //  );
+
+      
+      
+       
+       
+       
+       
      
        
        for (let index = 0; index < this.questions.length; index++) {
         this.questions[index].content = this.questions[index].content.replace('<p>', '').replace('</p>', '');
         
-       }
+        }
       /* this.questions.forEach((q:any)=>{
          // iterqate all question and each question have answer  and we should put in key value pair
           q['givenAnswer'] = '';
