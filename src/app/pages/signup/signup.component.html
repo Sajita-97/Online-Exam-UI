@@ -84,6 +84,11 @@
               <textarea [(ngModel)]="student.address" name="address"
               matInput></textarea>
             </mat-form-field>
+            <div>
+              <h2>Image Upload</h2>
+              <input type="file" (change)="onFileSelected($event)" >
+              <button (click)="uploadImage()" class="mb20">Upload</button>
+            </div>
   
             <div class="container text-center">
               <button type="submit" mat-raised-button color="primary">Submit</button>

@@ -21,6 +21,9 @@ export class StudentService {
    return this.http.post(`${baseUrl}/student/`,JSON.stringify(student),{ headers: header });
   }
   public getAllStudents():Observable<any[]>{
-    return this.http.get<any[]>(`{baseUrl}/student/all`);
+    return this.http.get<any[]>(`${baseUrl}/student/all`);
+}
+public uploadImage(){
+  
 }
 }

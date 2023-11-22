@@ -10,7 +10,7 @@ import { LoginService } from './login.service';
 export class MyInterceptor implements HttpInterceptor {
     constructor(private login:LoginService){}
   intercept(httpRequest: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    // add jwt token(localStorage prest) in request
+    // add jwt token(localStorage prest) in request gytberb
    
 const TOKEN_HEADER='Authorization';
 debugger;

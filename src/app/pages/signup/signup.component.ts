@@ -9,7 +9,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  
+  selectedFile: File | null = null;
+  profile: string | ArrayBuffer | null = null;
 
   constructor(private service:StudentService,private snack:MatSnackBar) { }
   public student = {
@@ -19,7 +20,8 @@ export class SignupComponent implements OnInit {
     lastName:'',
     email:'',
     phone:'',
-    address:''
+    address:'',
+  
   }
    
  
@@ -52,5 +54,28 @@ export class SignupComponent implements OnInit {
     
 
   }
+  onFileSelected(event:any):void {
+    this.selectedFile = event.target.files[0];
+    if (this.selectedFile) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.profile = e.target.result;
+      };
+      reader.readAsDataURL(this.selectedFile);
+    }
+  }
 
+  uploadImage(): void {
+    if (this.selectedFile) {
+
+      // Here, you can implement the code to upload the image to your server.
+      // You can use HttpClient to send a POST request to your server's image upload endpoint.
+      // Make sure to handle the server response accordingly.
+      // Example:
+      // this.httpClient.post('your-upload-endpoint', formData).subscribe(response => {
+      //   // Handle the response here
+      // });
+    }
+  }
 }
+
