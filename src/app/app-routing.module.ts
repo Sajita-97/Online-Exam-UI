@@ -73,7 +73,7 @@ const routes: Routes = [
         component:UpdateQuizComponent,
       },
       {
-        path:'view-questions/:qid/:title',
+        path:'view-questions/:qid/:title', // HERE ID WILL BE ADDED DYNAMICALLY
         component:ViewQuizQuestionsComponent
       },
       {

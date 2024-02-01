@@ -20,9 +20,8 @@ export class LoginService {
 
   public generateToken(loginData:any){
     var header = new HttpHeaders({'Content-Type': 'application/json'});
-   return this.http.post(`${baseUrl}/generate-token` ,loginData,{ headers: header });
-  }
-
+   return this.http.post(`${baseUrl}/generate-token`,loginData);
+   } 
   // Login user set token in localStorage
   public loginUser(token:any){
     localStorage.setItem('token',token);

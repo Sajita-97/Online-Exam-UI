@@ -26,6 +26,7 @@ export class NavbarComponent implements OnInit {
     this.login.logout();
     //this.isLoggedIn=false;
     //this.user=null;
-     window.location.reload();
+    this.login.loginStatusSubject.next(false);
+    // window.location.reload();
   }
 }

@@ -16,6 +16,7 @@ quiz:any;
 
   ngOnInit(): void {
     this.qid = this._route.snapshot.params['qid'];
+    //this.qid=this._route.snapshot.paramMap.get('qid');
     this._quiz.getQuiz(this.qid).subscribe({
       next:(data:any)=>{
         this.quiz=data;

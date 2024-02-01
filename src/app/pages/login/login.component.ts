@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
        next:(data:any)=>{
         
         console.log('success');
-          console.log(data);
+          //console.log(data);
         
 
            this.service.loginUser(data.token);
